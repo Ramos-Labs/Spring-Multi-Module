@@ -2,6 +2,7 @@ package me.ramos.commons.domain.repository;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.util.Optional;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import me.ramos.commons.config.TestConfiguration;
@@ -55,5 +56,29 @@ class PlayerRepositoryTest {
         assertThat(savedPlayer.getBackNumber()).isEqualTo(player.getBackNumber());
         assertThat(savedPlayer.getNationality()).isEqualTo(player.getNationality());
         assertThat(savedPlayer.getTeam()).isEqualTo(team);
+    }
+
+    @Test
+    void findByIdTest() throws Exception {
+        //given
+        Player player = Player.builder()
+                .name("Vini Jr")
+                .backNumber(7)
+                .nationality("Brazil")
+                .team(team)
+                .build();
+
+        entityManager.persist(player);
+
+        //when
+        Optional<Player> optionalPlayer = repository.findById(player.getId());
+
+        //then
+        assertThat(optionalPlayer).isPresent();
+        assertThat(optionalPlayer.get().getId()).isEqualTo(player.getId());
+        assertThat(optionalPlayer.get().getName()).isEqualTo(player.getName());
+        assertThat(optionalPlayer.get().getBackNumber()).isEqualTo(player.getBackNumber());
+        assertThat(optionalPlayer.get().getNationality()).isEqualTo(player.getNationality());
+        assertThat(optionalPlayer.get().getTeam()).isEqualTo(team);
     }
 }
