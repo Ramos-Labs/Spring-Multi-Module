@@ -1,10 +1,10 @@
-package me.ramos.multimodule;
+package me.ramos.commons;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MultimoduleApplicationTests {
+class CommonsApplicationTests {
 
     @Test
     void contextLoads() {

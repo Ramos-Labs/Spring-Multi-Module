@@ -1,1 +1,4 @@
 rootProject.name = 'multimodule'
+
+include 'api'
+include 'commons'
