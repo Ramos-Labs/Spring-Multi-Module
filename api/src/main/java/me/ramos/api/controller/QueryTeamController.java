@@ -2,7 +2,7 @@ package me.ramos.api.controller;
 
 import java.util.List;
 import lombok.RequiredArgsConstructor;
-import me.ramos.commons.domain.model.Team;
+import me.ramos.commons.dto.QueryTeamResponse;
 import me.ramos.commons.service.QueryTeamService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,12 +17,12 @@ public class QueryTeamController {
     private final QueryTeamService queryTeamService;
 
     @GetMapping("/{teamId}")
-    public Team findByTeamId(@PathVariable Long teamId) {
+    public QueryTeamResponse findByTeamId(@PathVariable Long teamId) {
         return queryTeamService.findByTeamId(teamId);
     }
 
     @GetMapping
-    public List<Team> findAll() {
+    public List<QueryTeamResponse> findAll() {
         return queryTeamService.findAll();
     }
 }

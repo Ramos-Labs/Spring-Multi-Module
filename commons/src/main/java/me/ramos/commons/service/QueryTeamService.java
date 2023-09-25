@@ -1,11 +1,11 @@
 package me.ramos.commons.service;
 
 import java.util.List;
-import me.ramos.commons.domain.model.Team;
+import me.ramos.commons.dto.QueryTeamResponse;
 
 public interface QueryTeamService {
 
-    Team findByTeamId(Long teamId);
+    QueryTeamResponse findByTeamId(Long teamId);
 
-    List<Team> findAll();
+    List<QueryTeamResponse> findAll();
 }
