@@ -1,7 +1,7 @@
 package me.ramos.api.controller;
 
 import lombok.RequiredArgsConstructor;
-import me.ramos.commons.service.impl.TestCommonService;
+import me.ramos.commons.service.impl.TestCommonServiceImpl;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class TestApiController {
 
-    private final TestCommonService testCommonService;
+    private final TestCommonServiceImpl testCommonServiceImpl;
 
     @GetMapping
     public String apiTest() {
-        return testCommonService.test();
+        return testCommonServiceImpl.test();
     }
 }

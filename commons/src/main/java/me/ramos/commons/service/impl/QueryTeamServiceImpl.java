@@ -4,20 +4,23 @@ import java.util.List;
 import lombok.RequiredArgsConstructor;
 import me.ramos.commons.domain.model.Team;
 import me.ramos.commons.domain.repository.TeamRepository;
+import me.ramos.commons.service.QueryTeamService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
-public class QueryTeamService {
+public class QueryTeamServiceImpl implements QueryTeamService {
 
     private final TeamRepository repository;
 
+    @Override
     public Team findByTeamId(Long teamId) {
         return repository.findById(teamId).orElseThrow(RuntimeException::new);
     }
 
+    @Override
     public List<Team> findAll() {
         return repository.findAll();
     }
