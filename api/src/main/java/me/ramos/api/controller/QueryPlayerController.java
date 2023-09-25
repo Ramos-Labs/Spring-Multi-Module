@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class QueryPlayerController {
 
     private final QueryPlayerService queryPlayerService;
+
     @GetMapping
     public List<Player> findAll() {
         return queryPlayerService.findAll();
