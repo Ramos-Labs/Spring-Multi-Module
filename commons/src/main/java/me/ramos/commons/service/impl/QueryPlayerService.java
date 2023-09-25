@@ -1,4 +1,4 @@
-package me.ramos.commons.service;
+package me.ramos.commons.service.impl;
 
 import java.util.List;
 import java.util.stream.Collectors;

@@ -1,4 +1,4 @@
-package me.ramos.commons.service;
+package me.ramos.commons.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
