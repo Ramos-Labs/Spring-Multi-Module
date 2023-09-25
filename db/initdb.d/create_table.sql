@@ -15,7 +15,6 @@ CREATE TABLE `players`
     `nationality`   varchar(50) NOT NULL,
     `team_id`       bigint      NOT NULL,
     PRIMARY KEY (`id`),
-    CONSTRAINT `back_number_unique` UNIQUE (`back_number`),
     CONSTRAINT `players_teams_ref` FOREIGN KEY (`team_id`) REFERENCES `teams` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
