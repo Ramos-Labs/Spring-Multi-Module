@@ -12,6 +12,7 @@ import me.ramos.commons.domain.model.Player;
 @AllArgsConstructor
 public class QueryPlayerResponse {
 
+    private Long id;
     private String name;
     private Integer backNumber;
     private String nationality;
@@ -20,6 +21,7 @@ public class QueryPlayerResponse {
 
     public static QueryPlayerResponse of(Player player) {
         return QueryPlayerResponse.builder()
+                .id(player.getId())
                 .name(player.getName())
                 .backNumber(player.getBackNumber())
                 .nationality(player.getNationality())
