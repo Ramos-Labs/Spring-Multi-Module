@@ -29,7 +29,7 @@ public class Player {
     @Column(name = "name", nullable = false, length = 50)
     private String name;
 
-    @Column(name = "back_number", unique = true)
+    @Column(name = "back_number")
     private Integer backNumber;
 
     @Column(name = "nationality", nullable = false, length = 50)

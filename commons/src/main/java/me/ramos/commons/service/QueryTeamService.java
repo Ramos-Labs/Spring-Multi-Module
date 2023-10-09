@@ -1,24 +1,11 @@
 package me.ramos.commons.service;
 
 import java.util.List;
-import lombok.RequiredArgsConstructor;
-import me.ramos.commons.domain.model.Team;
-import me.ramos.commons.domain.repository.TeamRepository;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+import me.ramos.commons.dto.QueryTeamResponse;
 
-@Service
-@Transactional(readOnly = true)
-@RequiredArgsConstructor
-public class QueryTeamService {
+public interface QueryTeamService {
 
-    private final TeamRepository repository;
+    QueryTeamResponse findByTeamId(Long teamId);
 
-    public Team findByTeamId(Long teamId) {
-        return repository.findById(teamId).orElseThrow(RuntimeException::new);
-    }
-
-    public List<Team> findAll() {
-        return repository.findAll();
-    }
+    List<QueryTeamResponse> findAll();
 }
