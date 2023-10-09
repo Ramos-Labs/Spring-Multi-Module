@@ -17,8 +17,7 @@ public class CommandTeamController {
     private final CommandTeamService commandTeamService;
 
     @PostMapping
-    public ResponseEntity<String> insertTeam(@RequestBody CommandTeamRequest request) {
-        commandTeamService.insertTeam(request);
-        return ResponseEntity.ok("ok");
+    public ResponseEntity<Long> insertTeam(@RequestBody CommandTeamRequest request) {
+        return ResponseEntity.ok(commandTeamService.insertTeam(request));
     }
 }

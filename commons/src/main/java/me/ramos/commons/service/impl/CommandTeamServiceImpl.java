@@ -15,7 +15,7 @@ public class CommandTeamServiceImpl implements CommandTeamService {
     private final TeamRepository teamRepository;
 
     @Override
-    public void insertTeam(CommandTeamRequest request) {
-        teamRepository.save(request.toTeam());
+    public Long insertTeam(CommandTeamRequest request) {
+        return teamRepository.save(request.toTeam()).getId();
     }
 }
